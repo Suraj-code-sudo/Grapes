@@ -1,0 +1,45 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<main>
+    <section id="form-container">
+    <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <img id="logo" src="{% static 'images/logo.png ' %}">
+                    <div class="container" >
+                        <div class="card-text">
+                            <div class="h3">Chat with me</div>
+                        <div class="display-6">
+                            Group video calling for free !!! 
+                        </div>
+                        </div>
+                        <br><br>
+                        <form id="form">
+                            <div class="form-field">
+                                <input type="submit" style="height: 40px; width:100%; font-weight: 400; font-size:medium;" class="form-control" value="Join Stream"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+    </section>
+</main>
+
+<script type="text/javascript">
+    let form = document.getElementById("form")
+
+    let handleSubmit = async (e) => {
+        e.preventDefault()
+        window.open('/room', '_self')
+    }
+
+    form.addEventListener('submit', handleSubmit)
+</script>
+
+{% endblock content %}
